@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import About from "../components/About/About";
 import styles from "../styles/Home.module.sass";
 
 export default function Home() {
