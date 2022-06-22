@@ -1,0 +1,100 @@
+.head
+  width: 100%
+  height: calc( 100vh - 120px )
+  background: linear-gradient(180deg, rgba(248,154,28,1) 60%, rgba(243,131,36,1) 60%)
+.container
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100%
+
+.main__content
+.main__img
+  position: relative
+  transform: translateX(-20%)
+  height: calc( 85vh - 120px )
+  img
+    height: 100%
+
+.main__cart
+  position: absolute
+  top: 50%
+  right: 15%
+  height: 75%
+  width: 65%
+  background-color: #1F3570
+  transform: translateY(-50%) translateX(100%)
+  color: #fff
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  justify-content: center
+  padding-left: 30px
+
+.new__text
+  margin-bottom: 20px
+  font-size: 14px
+  font-family: "Roboto", sans-serif
+  font-weight: 400
+
+.cart__title
+  margin-bottom: 10px
+  font-size: 32px
+  font-family: "Cormorant Garamond", sans-serif
+  font-weight: 400
+
+.cartSub__title
+  font-size: 28px
+  font-family: "Cormorant Garamond", sans-serif
+  font-weight: 400
+  margin-bottom: 20px
+
+@media screen and (max-width: 870px)
+  .main__cart
+    right: 50%
+    transform: translateY(-50%) translateX(50%)
+  .main__img
+    transform: translateX(0)
+@media screen and (max-width: 536px)
+  .container
+    align-items: flex-start
+    padding-top: 40px
+  .main__content
+    display: flex
+    justify-content: center
+    align-items: flex-start
+  .main__img
+    height: auto
+    max-height: calc( 85vh - 120px )
+    width: 90%
+    img
+      width: 100%
+  .main__cart
+    width: 90%
+  //text
+  .new__text
+    margin-bottom: 15px
+    font-size: 12px
+  .cart__title
+    margin-bottom: 5px
+    font-size: 28px
+  .cartSub__title
+    font-size: 22px
+    margin-bottom: 10px
+@media screen and (max-width: 420px)
+  .container
+    padding-top: 0
+    align-items: center
+  .main__content
+    align-items: center
+  //text
+  .new__text
+    margin-bottom: 15px
+    font-size: 12px
+  .cart__title
+    margin-bottom: 5px
+    font-size: 22px
+  .cartSub__title
+    font-size: 18px
+    margin-bottom: 10px

@@ -24,12 +24,18 @@
     margin-right: 0
 .hamburger
   display: none
+@media screen and (max-width: 1200px)
+  .container
+    width: calc( 100% - 150px )
 @media screen and (max-width: 1000px)
+  .container
+    width: calc( 100% - 100px )
   .hamburger
     display: block
+    z-index: 101
   .nav
     background-color: #fff
-    position: absolute
+    position: fixed
     bottom: 0
     right: 0
     width: 50%
@@ -39,9 +45,13 @@
     justify-content: center
     flex-direction: column
     padding-left: 40px
-    transform: translateX(100%)
+    z-index: 100
   .nav__link
     margin: 0
     margin-bottom: 15px
   .nav.navVisible
-    transform: translateX(0)
+@media screen and (max-width: 800px)
+  .container
+    width: calc( 100% - 50px )
+  .logo
+    width: 160px
