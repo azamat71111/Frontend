@@ -6,8 +6,10 @@ export default function About() {
         <header className={styles.about}>
             <div className={styles.container}>
                 <div className={styles.info}>
+                    <div className={styles.titles}>
                     <h2 className={styles.about__h2}>О Нас</h2>
                     <h2 className={styles.about__description}>Мы подберем вам уникальные дизайны</h2>
+                    </div>
                     <a href="#" className={styles.about__link}>Узнать еще</a>
                 </div>
                 <div className={styles.img}>
