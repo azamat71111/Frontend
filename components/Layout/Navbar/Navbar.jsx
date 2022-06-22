@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./Navbar.module.sass";
 import { nav } from "../../../data/nav";
-import Link from "next/Link";
+import Link from "next/link";
+import { Fade as Hamburger } from "hamburger-react";
 
 function Navbar() {
   return (

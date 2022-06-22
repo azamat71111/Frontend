@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.sass";
 import { nav } from "../../../data/nav";
-import Link from "next/Link";
+import Link from "next/link";
 
 export default function Footer() {
   return (
