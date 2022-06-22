@@ -34,22 +34,12 @@ function Navbar() {
   const [isOpen, setOpen] = useState(false);
   const [screenWidth, setScreenWidth] = useState(false);
 
-  useEffect(() => {
-    if (!isOpen || screenWidth) {
-      document.body.style.overflow = "visible";
-    }
-    if (isOpen && !screenWidth) {
-      document.body.style.overflow = "hidden";
-    }
-  }, [isOpen]);
   //humburger width
   const handleWidth = () => {
     const screenWidth = window.screen.width;
     if (screenWidth > 1000) {
-      setOpen(true);
       setScreenWidth(true);
     } else {
-      setOpen(false);
       setScreenWidth(false);
     }
   };
@@ -59,6 +49,17 @@ function Navbar() {
     return () => window.removeEventListener("resize", handleWidth);
   }, []);
 
+  //humburger height
+  const handleScroll = () => {
+    let scrollY = window.scrollY;
+    if (scrollY >= 40) {
+      setOpen(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <header className={styles.navbar}>
       <div className={styles.container}>
