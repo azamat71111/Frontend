@@ -7,18 +7,20 @@ export default function Footer() {
   return (
     <div className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.logo}>
-          <img src="/images/logo.png" alt="Евразия" />
+        <div className={styles.footerNav}>
+          <div className={styles.logo}>
+            <img src="/images/logo.png" alt="Евразия" />
+          </div>
+          <nav className={styles.nav}>
+            {nav.map(({ name, href, id }) => {
+              return (
+                <Link key={id} href={href}>
+                  <a className={styles.footer__link}>{name}</a>
+                </Link>
+              );
+            })}
+          </nav>
         </div>
-        <nav className={styles.nav}>
-          {nav.map(({ name, href, id }) => {
-            return (
-              <Link key={id} href={href}>
-                <a className={styles.nav__link}>{name}</a>
-              </Link>
-            );
-          })}
-        </nav>
         <div className={styles.arrowUp}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
