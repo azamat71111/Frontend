@@ -4,6 +4,15 @@ import { nav } from "../../../data/nav";
 import Link from "next/link";
 
 export default function Footer() {
+  const handlerScrollUp = () => {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <div className={styles.footer}>
       <div className={styles.container}>
@@ -21,7 +30,7 @@ export default function Footer() {
             })}
           </nav>
         </div>
-        <div className={styles.arrowUp}>
+        <div onClick={handlerScrollUp} className={styles.arrowUp}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
