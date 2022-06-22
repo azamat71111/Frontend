@@ -1,4 +1,4 @@
-export default nav = [
+export const nav = [
   {
     name: "Главная",
     href: "/",
@@ -7,16 +7,16 @@ export default nav = [
   {
     name: "О нас",
     href: "/About",
-    id: 1,
+    id: 2,
   },
   {
     name: "Квартиры",
     href: "/Apartments",
-    id: 1,
+    id: 3,
   },
   {
     name: "Контакты",
     href: "/Contacts",
-    id: 1,
+    id: 4,
   },
 ];
