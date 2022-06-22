@@ -22,3 +22,26 @@
   color: #F89A1C
   &:last-child
     margin-right: 0
+.hamburger
+  display: none
+@media screen and (max-width: 1000px)
+  .hamburger
+    display: block
+  .nav
+    background-color: #fff
+    position: absolute
+    bottom: 0
+    right: 0
+    width: 50%
+    height: 100vh
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    flex-direction: column
+    padding-left: 40px
+    transform: translateX(100%)
+  .nav__link
+    margin: 0
+    margin-bottom: 15px
+  .nav.navVisible
+    transform: translateX(0)
