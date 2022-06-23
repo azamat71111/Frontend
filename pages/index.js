@@ -1,5 +1,6 @@
 import Head from "next/head";
 import About from "../components/About/About";
+import Cart from "../components/Cart/Cart";
 import MainHead from "../components/MainHead/MainHead";
 import Services from "../components/Services/Services";
 import styles from "../styles/Home.module.sass";
@@ -13,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainHead />
+      <Cart />
       <About />
       <Services />
     </div>
