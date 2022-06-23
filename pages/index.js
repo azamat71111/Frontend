@@ -1,5 +1,6 @@
 import Head from "next/head";
 import About from "../components/About/About";
+import Apartments from "../components/Apartments/Apartments";
 import MainHead from "../components/MainHead/MainHead";
 import Services from "../components/Services/Services";
 import styles from "../styles/Home.module.sass";
@@ -15,6 +16,7 @@ export default function Home() {
       <MainHead />
       <About />
       <Services />
+      <Apartments/>
     </div>
   );
 }
