@@ -3,6 +3,7 @@ import About from "../components/About/About";
 import Apartments from "../components/Apartments/Apartments";
 import Cart from "../components/Cart/Cart";
 import MainHead from "../components/MainHead/MainHead";
+import Realters from "../components/Realters/Realters";
 import Services from "../components/Services/Services";
 import styles from "../styles/Home.module.sass";
 
@@ -19,6 +20,7 @@ export default function Home() {
       <About />
       <Services />
       <Apartments/>
+      <Realters/>
     </div>
   );
 }
