@@ -1,0 +1,42 @@
+.upper
+  background: #F89A1C
+  margin-top: 100px
+
+.upper_container
+  width: calc(100% - 450px)
+  margin: 0 auto
+
+.grid
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  justify-content: space-between
+  text-align: center
+
+.grid_block
+  padding: 35px
+  align-self: center
+  &:nth-child(2)
+    margin-top: 20px
+
+.grid_block h2
+  color: #fff
+  font-family: 'Cormorant Garamond'
+  font-style: normal
+  font-weight: 400
+  font-size: 21px
+  line-height: 30px
+
+.grid_block p
+  color: #fff
+  font-family: 'Roboto'
+  font-style: normal
+  font-weight: 400
+  font-size: 16px
+  line-height: 30px
+
+@media screen and (max-width: 800px)
+  .grid
+    display: grid
+    grid-template-columns: repeat(1, 1fr)
+    justify-content: space-between
+    text-align: center
