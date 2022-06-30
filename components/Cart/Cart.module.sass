@@ -1,0 +1,132 @@
+
+.container
+  width: calc( 100% - 200px )
+  margin: 0 auto
+  min-height: 100vh
+  padding-top: 70px
+
+.title__list
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: flex-start
+  text-align: center
+
+.title
+  font-family: "Roboto", sans-serif
+  font-weight: 400
+  font-size: 14px
+  color: #F89A1C
+  margin-bottom: 15px
+
+.main__title
+  font-family: "Cormorant Garamond", sans-serif
+  font-weight: 400
+  font-size: 1.625rem
+  color: #F38324
+  margin-bottom: 20px
+.block
+  display: block
+
+.moreInfo
+  font-family: "Roboto", sans-serif
+  font-weight: 400
+  font-size: 0.6875rem
+  text-transform: uppercase
+  border-radius: 25px
+  padding: 15px
+  background-color: #ffffff00
+  color: #F89A1C
+  border: 1px solid #F89A1C
+
+.cart__list
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin: 70px 0
+
+.cart__item
+  position: relative
+  overflow: hidden
+
+.cart__img
+  width: 370px
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.cart__content
+  position: absolute
+  width: 100%
+  height: 100px
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  justify-content: center
+  background-color: #F89A1C
+  bottom: 0
+  left: 0
+  z-index: 20
+  padding-left: 20px
+.cartContent__title
+  font-family: "Cormorant Garamond", sans-serif
+  font-size: 25px
+  font-weight: 400
+  color: #FFFFFF
+
+.cartContent__btn
+  font-family: "Cormorant Garamond", sans-serif
+  font-size: 17px
+  font-weight: 400
+  color: #FFFFFF
+
+@media screen and (max-width: 1400px)
+  .container
+    width: calc( 100% - 100px )
+    padding-top: 50px
+  .cart__list
+    margin: 50px 0
+
+@media screen and (max-width: 1300px)
+  .cart__img
+    width: 300px
+@media screen and (max-width: 1100px)
+  .cart__img
+    width: 280px
+@media screen and (max-width: 1000px)
+  .cart__list
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+  .cart__item
+    margin-bottom: 30px
+  .cart__img
+    width: 370px
+@media screen and (max-width: 860px)
+  .title
+    font-size: 14px
+  .main__title
+    font-size: 22px
+@media screen and (max-width: 625px)
+  // .container
+  //   width: calc( 100% - 100px )
+  .block
+    display: inline
+@media screen and (max-width: 587px)
+  .cart__img
+    width: 300px
+  .container
+    width: calc( 100% - 50px )
+    padding-top: 30px
+  .title
+    font-size: 12px
+  .main__title
+    font-size: 18px
+  .cart__list
+    margin: 30px 0
+
+@media screen and (max-height: 700px)
+  .container
+    min-height: 700px

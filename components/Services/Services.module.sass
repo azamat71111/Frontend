@@ -1,140 +1,109 @@
 .container
-    margin: 50px auto
-    width: calc( 100% - 50px )
+  margin: 50px auto
+  width: calc( 100% - 150px )
 
 .card
-    display: flex
-    justify-content: space-between
+  display: flex
+  justify-content: space-between
 
 .info__service
-    margin: 170px auto
-    line-height: 30px
-    
+  margin: 170px 50px 0
+  line-height: 30px
+
 .h4__service
-    color: #B99BB6
-    font-family: Roboto, sans-serif
-    font-size: 20px
-    letter: 1.5 px
-    font-weight: 400
-    padding-bottom: 10px
+  color: #B99BB6
+  font-family: Roboto, sans-serif
+  font-size: 20px
+  letter: 1.5px
+  font-weight: 400
+  padding-bottom: 10px
 .p__info
-    max-width: 227px
-    font-size: 20px
-    color: #5F4D5D
-    font-family: Cormorant Garamond, sans-serif
+  max-width: 300px
+  font-size: 20px
+  color: #5F4D5D
+  font-family: Cormorant Garamond, sans-serif
 
 .card__2
-    margin: 50px auto
+  margin: 50px auto
 
 .info__service2
-    line-height: 30px
+  line-height: 30px
 
 .p__info2
-    max-width: 435px
-
+  max-width: 340px
 
 @media screen  and (max-width:1183px)
-    .img__service
-        width: 500px
-        height: 400px
+  .img__service
+    width: 500px
+    height: 400px
 
     .info__service
-        margin: 130px auto
+      margin: 130px auto
 
     .p__info
-        font-size: 18px 
-
-    // .info__service2
-    //     margin-left: 100px
-    .card__2
-        margin: 10px auto    
-
-@media screen  and (max-width:1090px)
-    .img__service
-        width: 480px
-        height: 380px
-
-
-
-
-@media screen  and (max-width:1010px)
-    .img__service
-        width: 450px
-        height: 350px
-        margin: 10px auto
-
-
-@media screen  and (max-width:1010px)
-    .img__service
-        width: 440px
-        height: 340px
-
-
-@media screen  and (max-width:970px)
-    .card__2
-        margin: 10px auto
-
-    .info__service
-        margin: 80px auto
-    
-    .img__service
-        width: 380px
-        height: 310px
-
-    .p__info2
-        max-width: 300px
-
-    @media screen  and (max-width:939px)
-        .img__service
-            margin: 0px auto
-
-@media screen  and (max-width:850px)
-    .img__service
-        width: 340px
-        height: 300px
-        
+      font-size: 18px
 
     .info__service2
-        margin: 50px 
-
-    .info__service
-        width: 400px
-
-
-
-
-@media screen  and (max-width:792px)
-    .card
-        display: flex
-        align-items: center
-        flex-direction: column-reverse
-
+      margin-left: 100px
     .card__2
-        display: flex
-        align-items: center
-        flex-direction: column
+      margin: 10px auto
 
-    .img__service
-        width: 450px
-        height: 350px
+@media screen  and (max-width:1090px)
+  .info__service
+    margin: 130px 50px 0
+  .img__service
+    width: 480px
+    height: 380px
 
-    .p__info
-        max-width: 401px
-        margin: 0 auto
+@media screen  and (max-width:1010px)
 
-@media screen  and (max-width:559px)
-    .img__service
-        width: 390px
-        height: 290px
+@media screen  and (max-width:1010px)
+  .img__service
+    width: 440px
+    height: 340px
 
+@media screen  and (max-width:991px)
+  .card__2
+    margin: 10px auto
+  .img__service
+    width: 360px
+    height: 300px
+  .info__service2
+    margin: 50px
+  .info__service
+    margin: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
 
-@media screen  and (max-width:559px)
-    .img__service
-        width: 350px
-        height: 250px
+@media screen  and (max-width:915px)
+  .container
+    width: calc( 100% - 50px )
+  .card
+    display: flex
+    align-items: center
+    flex-direction: column-reverse
 
-    .p__info
-        max-width: 311px
-        margin: 0 auto
-    .h4__service
-        text-align: center
+  .card__2
+    display: flex
+    align-items: center
+    flex-direction: column
+
+  .img__service
+    width: 80%
+    height: auto
+  .info__service
+    width: 80%
+    height: auto
+    margin: 40px auto
+    padding-left: 15px
+
+  .p__info
+    max-width: 100%
+
+@media screen  and (max-width:600px)
+  .img__service
+    width: 100%
+  .info__service
+    width: 100%
