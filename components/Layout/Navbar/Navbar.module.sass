@@ -46,12 +46,23 @@
     flex-direction: column
     padding-left: 40px
     z-index: 100
+  .logo
+    z-index: 101
   .nav__link
     margin: 0
     margin-bottom: 15px
   .nav.navVisible
 @media screen and (max-width: 800px)
   .container
+    height: 90px
+  .container
     width: calc( 100% - 50px )
   .logo
     width: 160px
+  .nav
+    width: 70%
+@media screen and (max-width: 455px)
+  .logo
+    width: 110px
+  .nav
+    width: 80%
