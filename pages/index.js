@@ -1,8 +1,10 @@
 import Head from "next/head";
 import About from "../components/About/About";
+import Apartments from "../components/Apartments/Apartments";
 import Cart from "../components/Cart/Cart";
 import MainHead from "../components/MainHead/MainHead";
 import PriceRoom from "../components/PriceRoom/PriceRoom";
+import Realters from "../components/Realters/Realters";
 import Services from "../components/Services/Services";
 import styles from "../styles/Home.module.sass";
 
@@ -18,7 +20,9 @@ export default function Home() {
       <Cart />
       <About />
       <Services />
+      <Apartments />
       <PriceRoom />
+      <Realters />
     </div>
   );
 }
