@@ -14,11 +14,11 @@ export default function Services() {
             Дадим ключи в ваши руки
           </p>
         </div>
-        <img src="images/start.png" alt="" className={styles.img__service} />
+        <img src="images/assessment.png" alt="" className={styles.img__service} />
       </div>
       <div className={`${styles.card} ${styles.card__2}`}>
         <img
-          src="images/start.png"
+          src="images/assessment.png"
           alt=""
           className={`${styles.img__service} ${styles.img__service2}`}
         />

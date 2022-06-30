@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Upper.module.sass";
+import Link from "next/link";
 
 function Upper() {
   return (
@@ -9,19 +10,25 @@ function Upper() {
           <div className={styles.grid_block}>
             <img src="/images/upper-1.svg" />
             <h2>Продать</h2>
-            <a href="/">Заполните анкету</a>
+            <Link href="/">
+              <a>Заполните анкету</a>
+            </Link>
           </div>
 
           <div className={styles.grid_block}>
             <img src="/images/upper-2.svg" />
             <h2>Купить</h2>
-            <a href="/">Заполните анкету</a>
+            <Link href="/">
+              <a>Заполните анкету</a>
+            </Link>
           </div>
 
           <div className={styles.grid_block}>
             <img src="/images/upper-3.svg" />
             <h2>Оценка</h2>
-            <a href="/">Заполните анкету</a>
+            <Link href="/">
+              <a>Заполните анкету</a>
+            </Link>
           </div>
         </div>
       </div>
