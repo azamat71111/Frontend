@@ -1,9 +1,8 @@
 .container
-  margin: 0 auto 
+  margin: 80px auto 
   width: calc( 100% - 50px )
   text-align: center
-
-
+  padding: 0 10px
 .title
   font-family: 'Roboto', sans-serif
   font-style: normal
@@ -11,8 +10,7 @@
   font-size: 14px
   line-height: 30px
   color: #F89A1C
-
-
+  letter-spacing: 1.5px
 .title2
   font-family: 'Cormorant Garamond', sans-serif
   font-style: normal
@@ -22,16 +20,67 @@
   text-align: center
   color: #F38324
 .input
+  
   padding-top: 10px
 .input__name 
-  height: 40px
-  width: 170px
-
+  height: 60px
+  width: 208px
+  font-family: "Cormorant Garamond", sans-serif
+  font-size: 18px
+  line-height: 30px
+  font-weight: 400
+  font-style: italic
+  border: 1px solid #1F3570
 .input__email 
-  height: 40px
-  width: 170px
-
+  height: 60px
+  width: 208px
+  font-family: "Cormorant Garamond", sans-serif
+  font-size: 18px
+  line-height: 30px
+  font-weight: 400
+  font-style: italic
+  border-top: 1px solid #1F3570
+  border-bottom: 1px solid #1F3570
+  border-right: 1px solid #1F3570
 .btn
   background: #1F3570
-  padding: 12px 26px
+  padding: 15px 44px
+  line-height: 30px
   color: white
+  border: none
+  font-family: "Cormorant Garamond", sans-serif
+  font-size: 18px
+  transition: .4s
+  cursor: pointer
+  &:hover
+    background-color: white
+    color: #F38324
+.complete
+  text-align: center
+  margin-top: 15px
+  font-size: 14px
+  font-family: "Roboto", sans-serif
+  font-weight: 300
+  color: green
+.error
+  text-align: center
+  margin-top: 15px
+  font-size: 14px
+  font-family: "Roboto", sans-serif
+  font-weight: 300
+  color: red
+@media screen and ( max-width: 655px )
+  .btn
+    margin-top: 10px
+@media screen and ( max-width: 490px )
+  .input
+    max-width: 208px
+    display: flex
+    flex-direction: column
+    margin: 0 auto
+  .input__email
+    border-top: none
+    border-left: 1px solid #1F3570
+@media screen and ( max-width: 500px )
+  .container
+    margin: 50px auto
