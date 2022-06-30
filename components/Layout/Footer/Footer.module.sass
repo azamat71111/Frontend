@@ -17,7 +17,6 @@
   margin-right: 40px
   img
     width: 100%
-.nav
 .footer__link
   font-family: 'Cormorant Garamond', sans-serif
   font-weight: 400
@@ -33,3 +32,17 @@
     cursor: pointer
     height: 100%
     color: #F89A1C
+
+@media screen and (max-width: 1000px)
+  .container
+    width: calc( 100% - 100px )
+  .nav
+    display: none
+@media screen and (max-width: 800px)
+  .container
+    width: calc( 100% - 50px )
+@media screen and (max-width: 455px)
+  .logo
+    width: 110px
+  .arrowUp
+    height: 40px

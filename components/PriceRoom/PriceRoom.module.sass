@@ -1,0 +1,180 @@
+.background
+  background-color: #F89A1C
+
+.container
+  width: calc( 100% - 450px )
+  margin: 0 auto
+  padding: 50px 0
+  font-family: "Roboto", sans-serif
+  display: flex
+  align-items: center
+  justify-content: space-around
+.info
+.email
+  text-transform: uppercase
+  color: #fff
+  font-size: 0.875rem
+  font-weight: 400
+  margin-bottom: 20px
+.email__item
+  margin-top: 5px
+  text-transform: lowercase
+.number
+  margin-bottom: 20px
+  text-transform: uppercase
+  color: #fff
+  font-size: 0.875rem
+  font-weight: 400
+.number__item
+  margin-top: 5px
+  text-transform: lowercase
+  font-family: "Cormorant Garamond", sans-serif
+  font-size: 18px
+.address
+  margin-bottom: 20px
+  text-transform: uppercase
+  color: #fff
+  font-size: 0.875rem
+  font-weight: 400
+.address__item
+  margin-top: 5px
+  text-transform: lowercase
+
+.sidebar
+  max-width: 600px
+.sidebar__title
+  font-family: "Roboto", sans-serif
+  font-size: 14px
+  color: #fff
+  font-weight: 400
+  text-transform: uppercase
+  margin-bottom: 10px
+.sidebar__subTitle
+  font-size: 1.375rem
+  color: #fff
+  font-weight: 400
+  max-width: 470px
+  margin-bottom: 20px
+.sidebar__form
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 25px
+.user__name
+  font-size: 18px
+  font-family: "Cormorant Garamond", sans-serif
+  height: 50px
+  background-color: #85838300
+  border: 1px solid #fff
+  color: #fff
+  padding: 10px
+  transition: .3s
+  &:focus
+    background-color: #fff
+    color: #000
+.user__address
+  font-size: 18px
+  font-family: "Cormorant Garamond", sans-serif
+  height: 50px
+  background-color: #85838300
+  border: 1px solid #fff
+  color: #fff
+  padding: 10px
+  transition: .3s
+  &:focus
+    background-color: #fff
+    color: #000
+.user__number
+  font-size: 18px
+  font-family: "Cormorant Garamond", sans-serif
+  height: 50px
+  background-color: #85838300
+  border: 1px solid #fff
+  color: #fff
+  padding: 10px
+  transition: .3s
+  &:focus
+    background-color: #fff
+    color: #000
+.user__email
+  font-size: 18px
+  font-family: "Cormorant Garamond", sans-serif
+  height: 50px
+  background-color: #85838300
+  border: 1px solid #fff
+  color: #fff
+  padding: 10px
+  transition: .3s
+  &:focus
+    background-color: #fff
+    color: #000
+.user__des
+  font-size: 18px
+  font-family: "Cormorant Garamond", sans-serif
+  height: 100px
+  resize: none
+  background-color: #85838300
+  border: 1px solid #fff
+  color: #fff
+  grid-column-start: 1
+  grid-column-end: 3
+  padding: 10px
+  transition: .3s
+  &:focus
+    background-color: #fff
+    color: #000
+
+.form__btn
+  height: 50px
+  background-color: #85838300
+  border: 1px solid #fff
+  color: #fff
+  font-family: "Cormorant Garamond", sans-serif
+  font-size: 18px
+  font-weight: 400
+  transition: .3s
+  cursor: pointer
+  &:hover
+    background-color: #fff
+    color: #000
+@media screen and (max-width: 1400px)
+  .container
+    width: calc( 100% - 200px )
+@media screen and (max-width: 1100px)
+  .container
+    width: calc( 100% - 100px )
+@media screen and (max-width: 1100px)
+  .container
+    width: calc( 100% - 50px )
+@media screen and (max-width: 900px)
+  .container
+    max-width: 500px
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    padding: 40px 0
+  .info
+    order: 1
+    margin-top: 40px
+    width: 100%
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr ))
+    gap: 15px
+  .sidebar
+    width: 100%
+    order: 0
+  .sidebar__form
+    margin-top: 30px
+  .sidebar__subTitle
+    font-size: 1.25rem
+@media screen and (max-width: 500px)
+  .sidebar__subTitle
+    font-size: 1rem
+  .sidebar__form
+    display: grid
+    grid-template-columns: 1fr
+    gap: 25px
+  .user__des
+    grid-column-start: 1
+    grid-column-end: 2

@@ -35,7 +35,7 @@ export default function Cart() {
       <div className={styles.title__list}>
         <h2 className={styles.title}>НАША КОМПАНИЯ</h2>
         <h2 className={styles.main__title}>
-          Мы занимаемся оценкой, продажой и покупкой квартир.
+          Мы занимаемся оценкой, продажой и покупкой квартир.{" "}
           <span className={styles.block}>
             Мы поможем вам продать вашу квартиру по очень выгодным вам ценам
           </span>
