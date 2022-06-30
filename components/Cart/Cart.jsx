@@ -57,9 +57,9 @@ export default function Cart() {
               variants={CartVariant}
             >
               <h4 className={styles.cartContent__title}>О нас</h4>
-              <Link href="/">
+              {/* <Link href="/">
                 <a className={styles.cartContent__btn}>Узнать ещё</a>
-              </Link>
+              </Link> */}
             </motion.div>
           </AnimatePresence>
         </li>
@@ -77,9 +77,9 @@ export default function Cart() {
               variants={CartVariant}
             >
               <h4 className={styles.cartContent__title}>Наши объекты</h4>
-              <Link href="/">
+              {/* <Link href="/">
                 <a className={styles.cartContent__btn}>Узнать ещё</a>
-              </Link>
+              </Link> */}
             </motion.div>
           </AnimatePresence>
         </li>
@@ -97,9 +97,9 @@ export default function Cart() {
               variants={CartVariant}
             >
               <h4 className={styles.cartContent__title}>Наши контакты</h4>
-              <Link href="/">
+              {/* <Link href="/">
                 <a className={styles.cartContent__btn}>Узнать ещё</a>
-              </Link>
+              </Link> */}
             </motion.div>
           </AnimatePresence>
         </li>
