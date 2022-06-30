@@ -6,6 +6,7 @@ import MainHead from "../components/MainHead/MainHead";
 import PriceRoom from "../components/PriceRoom/PriceRoom";
 import Realters from "../components/Realters/Realters";
 import Services from "../components/Services/Services";
+import Upper from "../components/Upper/Upper";
 import styles from "../styles/Home.module.sass";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <Apartments />
       <PriceRoom />
       <Realters />
+      <Upper />
     </div>
   );
 }
