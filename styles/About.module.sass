@@ -1,11 +1,9 @@
 .container
   margin: 50px auto
-  width: calc( 100% - 150px )
-
-
+  max-width: 1190px
+  padding: 20px
 .title__info 
   text-align: center
-
 .title__about
   font-family: Roboto, sans-serif
   font-size: 21px
@@ -13,143 +11,53 @@
   font-weight: 700
   line-height: 30px
   padding-bottom: 40px
-
+  letter-spacing: 1.5px
 .title__h3
   font-family: 'Cormorant Garamond', sans-serif
   font-size: 26px
   font-weight: 400
   line-height: 38px
   color: #F89A1C
-  
 .block
-  display: flex
-  justify-content: space-evenly
-  
-.block__img
-  max-width: 100%
-  padding-top: 50px
-
-
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 50px
+  margin-top: 50px
 .block__h1
   font-size: 24px
   color: #F89A1C
   font-family: 'Cormorant Garamond', sans-serif
   max-width: 545px
-
-
+  padding-top: 10px
 .block__h3
   font-size: 24px
   color: #F89A1C
   font-family: 'Cormorant Garamond', sans-serif
   max-width: 545px
+  padding-top: 10px
+.img
+  width: 100%
+  height: 100%
+.image
+  max-width: 544px
 
-
-@media screen  and (max-width:1253px)
-  .img
-    max-width: 450px
-
-  .block__h1
-      max-width: 450px
-
-  .block__h3
-    max-width: 450px
-
-
-@media screen  and (max-width:1073px)
-  .img
-    max-width: 400px
-
-  .block__h1
-      max-width: 400px
-
-  .block__h3
-    max-width: 400px
-
-  .block__h3
-    font-size: 20px
-
-.block__h1
-  font-size: 20px
-
-@media screen  and (max-width:957px)
-  .img
-    max-width: 350px
-
-  .block__h1
-      max-width: 350px
-
-  .block__h3
-    max-width: 350px
-
-@media screen  and (max-width:823px)
-  .img
-    max-width: 300px
-
-  .block__h1
-      max-width: 300px
-
-  .block__h3
-    max-width: 300px
-  .title__h3
-    font-size: 22px
-  .title__2
-    font-size: 22px
-
-
-@media screen  and (max-width:749px)
+@media screen  and (max-width: 700px)
   .block
-    display: flex
-    flex-direction: column
-    align-items: center
-    
-  .img
-    max-width: 400px
-
-
-  .block__h1
-      max-width: 400px
-
-  .block__h3
-    max-width: 400px
-
-  .block__h3
-    font-size: 20px
-
+    grid-template-columns: repeat(1, 2fr)
+@media screen  and (max-width: 450px)
+  .title__h3
+    line-height: 25px
+    text-align: left
+  .title__about
+    padding-bottom: 20px 
   .container
-    width: calc( 100% - 50px )
-
+    margin: 0 auto
+@media screen  and (max-width: 370px)
   .title__h3
     font-size: 20px
-  .title__2
-    font-size: 20px
-
-
-
-@media screen  and (max-width:445px)
-  .img
-    max-width: 350px
-
-
   .block__h1
-      max-width: 350px
-
-  .block__h3
-    max-width: 350px
-
-  .title__h3
     font-size: 20px
-  .title__2
-    font-size: 20px
-
-
-
-@media screen  and (max-width:400px)
-  .img
-    max-width: 300px
-
-
-  .block__h1
-      max-width: 300px
-
   .block__h3
-    max-width: 300px
+    font-size: 20px
+  .block
+    gap: 25px

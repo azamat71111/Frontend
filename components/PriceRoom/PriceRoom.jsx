@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./PriceRoom.module.sass";
+import axios from '../../api/axios'
 
 export default function PriceRoom() {
+  const [message, setMessage] = useState({
+    name: '',
+    addrress: '',
+    phone: '',
+    email: '',
+    message: ''
+  })
+  const [loading, setLoading] = useState(null)
+  const onChange = (e) => {
+    setMessage((value) => {
+      return {
+        ...value,
+        [e.target.name]: e.target.value
+      }
+    })
+  }
+
+  const submitHandler = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await axios.post(`adrresses`, {data: message})
+      if (!res.data) {
+        throw new Error();
+      }
+      setMessage(res.data.data);
+      setLoading('complete')
+    } catch (error) {
+      setMessage(false);
+      setLoading('error')
+    }
+  };
+
   return (
     <div id="contacts" className={styles.background}>
       <header className={styles.container}>
@@ -27,37 +60,45 @@ export default function PriceRoom() {
             Если хотите чтобы мы провели вам оценку квартиры, Напишите свои
             данные
           </h2>
-          <div className={styles.sidebar__form}>
+          <form onSubmit={submitHandler} className={styles.sidebar__form}>
             <input
+              onChange={onChange}
               className={styles.user__name}
               type="text"
               placeholder="Ваше имя"
-              name=""
+              name="name"
             />
             <input
+              onChange={onChange}
               className={styles.user__address}
               placeholder="Ваш адрес"
               type="text"
-              name=""
+              name="addrress"
             />
             <input
+              onChange={onChange}
               className={styles.user__number}
               placeholder="Ваш телефон"
-              type="number"
-              name=""
+              type="text"
+              name="phone"
             />
             <input
+              onChange={onChange}
               className={styles.user__email}
               placeholder="Ваш емайл"
               type="email"
-              name=""
+              name="email"
             />
             <textarea
+              onChange={onChange}
               className={styles.user__des}
               placeholder="Ваше сообщения"
+              name="message"
             />
             <button className={styles.form__btn}>Отправить</button>
-          </div>
+          </form>
+          {loading === 'complete' ? <h3 className={styles.complete}>Успешно!</h3> : null}
+          {loading === 'error' ? <h3 className={styles.error}>Сообщения уже отправлено!</h3> : null}
         </div>
       </header>
     </div>
