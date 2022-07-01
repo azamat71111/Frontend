@@ -1,9 +1,12 @@
 .container
-  margin: 50px auto
+  margin: 30px auto 80px
   max-width: 1190px
   padding: 20px
-.title__info 
-  text-align: center
+.title__info
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: flex-start
 .title__about
   font-family: Roboto, sans-serif
   font-size: 21px
@@ -18,6 +21,8 @@
   font-weight: 400
   line-height: 38px
   color: #F89A1C
+  max-width: 650px
+  text-align: center
 .block
   display: grid
   grid-template-columns: repeat(2, 1fr)
@@ -29,12 +34,14 @@
   font-family: 'Cormorant Garamond', sans-serif
   max-width: 545px
   padding-top: 10px
+  padding-left: 10px
 .block__h3
   font-size: 24px
   color: #F89A1C
   font-family: 'Cormorant Garamond', sans-serif
   max-width: 545px
   padding-top: 10px
+  padding-left: 10px
 .img
   width: 100%
   height: 100%
@@ -44,20 +51,38 @@
 @media screen  and (max-width: 700px)
   .block
     grid-template-columns: repeat(1, 2fr)
+  .title__about
+    font-size: 22px
+  .title__h3
+    font-size: 22px
+  .block__h1
+    font-size: 22px
+  .block__h3
+    font-size: 22px
 @media screen  and (max-width: 450px)
   .title__h3
     line-height: 25px
     text-align: left
   .title__about
-    padding-bottom: 20px 
+    padding-bottom: 20px
   .container
     margin: 0 auto
-@media screen  and (max-width: 370px)
+  .title__about
+    font-size: 20px
   .title__h3
     font-size: 20px
   .block__h1
     font-size: 20px
   .block__h3
     font-size: 20px
+@media screen  and (max-width: 370px)
+  .title__about
+    font-size: 18px
+  .title__h3
+    font-size: 18px
+  .block__h1
+    font-size: 18px
+  .block__h3
+    font-size: 18px
   .block
     gap: 25px

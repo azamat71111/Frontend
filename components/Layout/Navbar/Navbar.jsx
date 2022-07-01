@@ -60,6 +60,9 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const onLink = () => {
+    setOpen(false);
+  };
   return (
     <header className={styles.navbar}>
       <div className={styles.container}>
@@ -71,7 +74,9 @@ function Navbar() {
             {nav.map(({ name, href, id }) => {
               return (
                 <Link key={id} href={href}>
-                  <a className={styles.nav__link}>{name}</a>
+                  <a onClick={onLink} className={styles.nav__link}>
+                    {name}
+                  </a>
                 </Link>
               );
             })}
@@ -91,7 +96,9 @@ function Navbar() {
                 {nav.map(({ name, href, id }) => {
                   return (
                     <Link key={id} href={href}>
-                      <a className={styles.nav__link}>{name}</a>
+                      <a onClick={onLink} className={styles.nav__link}>
+                        {name}
+                      </a>
                     </Link>
                   );
                 })}
