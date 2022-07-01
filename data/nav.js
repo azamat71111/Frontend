@@ -11,12 +11,12 @@ export const nav = [
   },
   {
     name: "Квартиры",
-    href: "/Apartments",
+    href: "/#apartments",
     id: 3,
   },
   {
     name: "Контакты",
-    href: "/Contacts",
+    href: "/#contacts",
     id: 4,
   },
 ];
