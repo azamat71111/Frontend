@@ -3,7 +3,7 @@ import styles from "./PriceRoom.module.sass";
 
 export default function PriceRoom() {
   return (
-    <div className={styles.background}>
+    <div id="contacts" className={styles.background}>
       <header className={styles.container}>
         <div className={styles.info}>
           <div className={styles.email}>
