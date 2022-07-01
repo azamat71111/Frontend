@@ -3,14 +3,9 @@ import styles from "./PriceRoom.module.sass";
 import axios from '../../api/axios'
 
 export default function PriceRoom() {
-  const [message, setMessage] = useState({
-    name: '',
-    addrress: '',
-    phone: '',
-    email: '',
-    message: ''
-  })
+  const [message, setMessage] = useState(false)
   const [loading, setLoading] = useState(null)
+  const [error, setError] = useState(false)
   const onChange = (e) => {
     setMessage((value) => {
       return {
@@ -21,17 +16,21 @@ export default function PriceRoom() {
   }
 
   const submitHandler = async (e) => {
-    e.preventDefault()
-    try {
-      const res = await axios.post(`adrresses`, {data: message})
-      if (!res.data) {
-        throw new Error();
+    e.preventDefault() 
+    if(message) {
+      try {
+        const res = await axios.post(`adrresses`, {data: message})
+        if (!res.data) {
+          throw new Error();
+        }
+        setMessage(res.data.data);
+        setLoading('complete')
+      } catch (error) {
+        setMessage(false);
+        setLoading('error')
       }
-      setMessage(res.data.data);
-      setLoading('complete')
-    } catch (error) {
-      setMessage(false);
-      setLoading('error')
+    } else {
+      setError(true)
     }
   };
 
@@ -61,13 +60,16 @@ export default function PriceRoom() {
             данные
           </h2>
           <form onSubmit={submitHandler} className={styles.sidebar__form}>
-            <input
-              onChange={onChange}
-              className={styles.user__name}
-              type="text"
-              placeholder="Ваше имя"
-              name="name"
-            />
+            <div className={styles.position}>
+              <input
+                onChange={onChange}
+                className={styles.user__name}
+                type="text"
+                placeholder="Ваше имя"
+                name="name"
+              />
+              {error ? <h3 className={styles.erorr}>Заполните поля!</h3> : null}
+            </div>
             <input
               onChange={onChange}
               className={styles.user__address}
@@ -75,13 +77,16 @@ export default function PriceRoom() {
               type="text"
               name="addrress"
             />
-            <input
-              onChange={onChange}
-              className={styles.user__number}
-              placeholder="Ваш телефон"
-              type="text"
-              name="phone"
-            />
+            <div className={styles.position}>
+              <input
+                onChange={onChange}
+                className={styles.user__number}
+                placeholder="Ваш телефон"
+                type="text"
+                name="phone"
+              />
+              {error ? <h3 className={styles.erorr}>Заполните поля!</h3> : null}
+            </div>
             <input
               onChange={onChange}
               className={styles.user__email}
