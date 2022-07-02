@@ -6,7 +6,10 @@ export default function PriceRoom() {
   const [message, setMessage] = useState(
     {
       name: '',
-      phone: ''
+      phone: '',
+      email: '',
+      addrress: '',
+      message: ''
     }
   )
   const [loading, setLoading] = useState(null)
@@ -20,7 +23,7 @@ export default function PriceRoom() {
       }
     })
   }
-  
+
   const submitHandler = async (e) => {
     e.preventDefault() 
     if(message.phone === '' || message.name === '') {
@@ -32,7 +35,7 @@ export default function PriceRoom() {
         if (!res.data) {
           throw new Error();
         }
-        setMessage(res.data.data);
+        setMessage(res.data.data)
         setLoading('complete')
         setErrorName(false)
         setErrorPhone(false)
@@ -40,9 +43,15 @@ export default function PriceRoom() {
         setMessage(false);
         setLoading('error')
       }
+      setMessage({
+        name: '',
+        phone: '',
+        email: '',
+        addrress: '',
+        message: ''
+      })
     }
   };
-
   return (
     <div id="contacts" className={styles.background}>
       <header className={styles.container}>
@@ -76,7 +85,7 @@ export default function PriceRoom() {
                 type="text"
                 placeholder={errorName ? 'Заполните поля' : 'Ваше имя'}
                 name="name"
-                
+                value={message.name}
               />
             </div>
             <input
@@ -85,6 +94,7 @@ export default function PriceRoom() {
               placeholder="Ваш адрес"
               type="text"
               name="addrress"
+              value={message.addrress}
             />
             <div className={styles.position}>
               <input
@@ -93,6 +103,7 @@ export default function PriceRoom() {
                 placeholder={errorName ? 'Заполните поля' : 'Ваш номер'}
                 type="text"
                 name="phone"
+                value={message.phone}
               />
             </div>
             <input
@@ -101,12 +112,14 @@ export default function PriceRoom() {
               placeholder="Ваш емайл"
               type="email"
               name="email"
+              value={message.email}
             />
             <textarea
               onChange={onChange}
               className={styles.user__des}
               placeholder="Ваше сообщения"
               name="message"
+              value={message.message}
             />
             <button className={styles.form__btn}>Отправить</button>
           </form>
