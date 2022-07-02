@@ -3,9 +3,15 @@ import styles from "./PriceRoom.module.sass";
 import axios from '../../api/axios'
 
 export default function PriceRoom() {
-  const [message, setMessage] = useState(false)
+  const [message, setMessage] = useState(
+    {
+      name: '',
+      phone: ''
+    }
+  )
   const [loading, setLoading] = useState(null)
-  const [error, setError] = useState(false)
+  const [errorName, setErrorName] = useState(false)
+  const [errorPhone, setErrorPhone] = useState(false)
   const onChange = (e) => {
     setMessage((value) => {
       return {
@@ -14,10 +20,13 @@ export default function PriceRoom() {
       }
     })
   }
-
+  
   const submitHandler = async (e) => {
     e.preventDefault() 
-    if(message) {
+    if(message.phone === '' || message.name === '') {
+      setErrorName(true)
+      setErrorPhone(true)
+    } else {
       try {
         const res = await axios.post(`adrresses`, {data: message})
         if (!res.data) {
@@ -25,12 +34,12 @@ export default function PriceRoom() {
         }
         setMessage(res.data.data);
         setLoading('complete')
+        setErrorName(false)
+        setErrorPhone(false)
       } catch (error) {
         setMessage(false);
         setLoading('error')
       }
-    } else {
-      setError(true)
     }
   };
 
@@ -63,12 +72,12 @@ export default function PriceRoom() {
             <div className={styles.position}>
               <input
                 onChange={onChange}
-                className={styles.user__name}
+                className={errorPhone ? styles.user__error : `${styles.user__name}`}
                 type="text"
-                placeholder="Ваше имя"
+                placeholder={errorName ? 'Заполните поля' : 'Ваше имя'}
                 name="name"
+                
               />
-              {error ? <h3 className={styles.erorr}>Заполните поля!</h3> : null}
             </div>
             <input
               onChange={onChange}
@@ -80,12 +89,11 @@ export default function PriceRoom() {
             <div className={styles.position}>
               <input
                 onChange={onChange}
-                className={styles.user__number}
-                placeholder="Ваш телефон"
+                className={errorPhone ? styles.user__error : `${styles.user__number}`}
+                placeholder={errorName ? 'Заполните поля' : 'Ваш номер'}
                 type="text"
                 name="phone"
               />
-              {error ? <h3 className={styles.erorr}>Заполните поля!</h3> : null}
             </div>
             <input
               onChange={onChange}
