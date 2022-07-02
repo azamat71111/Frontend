@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./About.module.sass";
+import Link from 'next/link'
 
 export default function About() {
   return (
@@ -13,9 +14,9 @@ export default function About() {
                 Мы подберем вам уникальные дизайн
               </h2>
             </div>
-            <a href="#" className={styles.about__link}>
-              Узнать еще
-            </a>
+            <Link href="/About">
+              <span className={styles.about__link}>Узнать еще</span>
+            </Link>
           </div>
           <div className={styles.img}>
             <img src="images/design.png" alt="" className={styles.img__about} />
