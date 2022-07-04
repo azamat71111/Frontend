@@ -32,49 +32,45 @@ let VarInput = {
   }),
 };
 export default function Realters({ width }) {
-  const [user, setUser] = useState({
-    name: "",
-    phone: "",
-  });
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(null);
-  const onChange = (e) => {
-    setUser((value) => {
-      return {
-        ...value,
-        [e.target.name]: e.target.value,
-      };
-    });
-  };
-  const submitHandler = async (e) => {
-    if (user.name === "" || user.phone === "") {
-      e.preventDefault();
-      setError(true);
-    } else {
-      e.preventDefault();
-      try {
-        const res = await axios.post(`realters`, { data: user });
-        if (!res.data) {
-          throw new Error();
-        }
-        setUser(res.data.data);
-        setLoading("complete");
-      } catch (error) {
-        setUser(false);
-        setLoading("error");
-      }
-      setUser({
-        name: "",
-        phone: "",
-      });
-      setError(true);
-    }
-  };
 
   const MotionForm = () => {
+    const [user, setUser] = useState({
+      name: "",
+      phone: "",
+    });
+    const onChange = (e) => {
+      setUser((value) => {
+        return {
+          ...value,
+          [e.target.name]: e.target.value,
+        };
+      });
+    };
+    const submitHandler = async (e) => {
+      e.preventDefault();
+      if (user.name === "" || user.phone === "") {
+        setError(true);
+      } else {
+        try {
+          const res = await axios.post(`realters`, { data: user });
+          if (!res.data) {
+            throw new Error();
+          }
+          setUser(res.data.data);
+        } catch (error) {
+          setUser(false);
+        }
+        setUser({
+          name: "",
+          phone: "",
+        });
+        setError(false);
+      }
+    };
     if (width > 490) {
       return (
-        <>
+        <form onSubmit={submitHandler} className={styles.input}>
           <motion.input
             initial="hidden"
             whileInView="visible"
@@ -120,11 +116,11 @@ export default function Realters({ width }) {
           >
             Отправить
           </motion.button>
-        </>
+        </form>
       );
     } else {
       return (
-        <>
+        <form onSubmit={submitHandler} className={styles.input}>
           <motion.input
             initial="hidden"
             whileInView="visible"
@@ -170,7 +166,7 @@ export default function Realters({ width }) {
           >
             Отправить
           </motion.button>
-        </>
+        </form>
       );
     }
   };
@@ -203,15 +199,7 @@ export default function Realters({ width }) {
         >
           Если вам нужно продать свою квартиру, заполните поле
         </motion.h2>
-        <form onSubmit={submitHandler} className={styles.input}>
-          <MotionForm />
-        </form>
-        {loading === "complete" ? (
-          <h3 className={styles.complete}>Успешно!</h3>
-        ) : null}
-        {loading === "error" ? (
-          <h3 className={styles.error}>Сообщения уже отправлено!</h3>
-        ) : null}
+        <MotionForm />
       </div>
     </>
   );
