@@ -151,26 +151,24 @@ export default function PriceRoom({ width }) {
             данные
           </motion.h2>
           <form onSubmit={submitHandler} className={styles.sidebar__form}>
-            <div className={styles.position}>
-              <motion.input
-                onChange={onChange}
-                className={
-                  errorPhone ? styles.user__error : `${styles.user__name}`
-                }
-                type="text"
-                placeholder={errorName ? "Заполните поля!" : "Ваше имя"}
-                name="name"
-                value={message.name}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{
-                  once: true,
-                  amount: 0.3,
-                }}
-                variants={bottomVar}
-                custom={0}
-              />
-            </div>
+            <motion.input
+              onChange={onChange}
+              className={
+                errorPhone ? styles.user__error : `${styles.user__name}`
+              }
+              type="text"
+              placeholder={errorName ? "Заполните поля!" : "Ваше имя"}
+              name="name"
+              value={message.name}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{
+                once: true,
+                amount: 0.3,
+              }}
+              variants={bottomVar}
+              custom={0}
+            />
             <motion.input
               onChange={onChange}
               className={styles.user__address}
@@ -187,26 +185,24 @@ export default function PriceRoom({ width }) {
               variants={bottomVar}
               custom={0}
             />
-            <div className={styles.position}>
-              <motion.input
-                onChange={onChange}
-                className={
-                  errorPhone ? styles.user__error : `${styles.user__number}`
-                }
-                placeholder={errorName ? "Заполните поля!" : "Ваш номер"}
-                type="text"
-                name="phone"
-                value={message.phone}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{
-                  once: true,
-                  amount: 0.3,
-                }}
-                variants={bottomVar}
-                custom={0}
-              />
-            </div>
+            <motion.input
+              onChange={onChange}
+              className={
+                errorPhone ? styles.user__error : `${styles.user__number}`
+              }
+              placeholder={errorName ? "Заполните поля!" : "Ваш номер"}
+              type="text"
+              name="phone"
+              value={message.phone}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{
+                once: true,
+                amount: 0.3,
+              }}
+              variants={bottomVar}
+              custom={0}
+            />
             <motion.input
               onChange={onChange}
               className={styles.user__email}

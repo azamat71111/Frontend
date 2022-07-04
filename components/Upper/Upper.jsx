@@ -75,7 +75,7 @@ function Upper({ width }) {
             custom={0}
             className={styles.grid_block}
           >
-            <img src="/images/upper-1.svg" />
+            <img alt="" src="/images/upper-1.svg" />
             <h2>Продать</h2>
           </motion.div>
 
@@ -90,7 +90,7 @@ function Upper({ width }) {
             custom={0}
             className={styles.grid_block}
           >
-            <img src="/images/upper-2.svg" />
+            <img alt="" src="/images/upper-2.svg" />
             <h2>Купить</h2>
           </motion.div>
 
@@ -105,7 +105,7 @@ function Upper({ width }) {
             custom={0}
             className={styles.grid_block}
           >
-            <img src="/images/upper-3.svg" />
+            <img alt="" src="/images/upper-3.svg" />
             <h2>Оценка</h2>
           </motion.div>
         </>
