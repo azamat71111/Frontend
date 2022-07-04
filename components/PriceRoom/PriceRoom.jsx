@@ -12,8 +12,8 @@ let InputVar = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.3,
-      delay: num * 0.3,
+      duration: 0.1,
+      delay: num * 0.1,
     },
   }),
 };
@@ -41,7 +41,7 @@ let bottomVar = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      delay: num * 0.1,
+      delay: num * 0.2,
     },
   }),
 };
