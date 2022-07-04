@@ -11,14 +11,10 @@ import Upper from "../components/Upper/Upper";
 import styles from "../styles/Home.module.sass";
 
 export default function Home() {
-  const [screenWidth, setScreenWidth] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(null);
   const handleWidth = () => {
     const screenWidth = window.screen.width;
-    if (screenWidth < 600) {
-      setScreenWidth(true);
-    } else {
-      setScreenWidth(false);
-    }
+    setScreenWidth(screenWidth);
   };
   useEffect(() => {
     handleWidth();
