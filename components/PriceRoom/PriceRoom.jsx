@@ -3,7 +3,50 @@ import styles from "./PriceRoom.module.sass";
 import axios from "../../api/axios";
 import { motion } from "framer-motion";
 
-export default function PriceRoom() {
+let firstVar = {
+  hidden: {
+    x: -20,
+    opacity: 0,
+  },
+  visible: (num) => ({
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: num * 0.1,
+    },
+  }),
+};
+let secondVar = {
+  hidden: {
+    x: 40,
+    opacity: 0,
+  },
+  visible: (num) => ({
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: num * 0.1,
+    },
+  }),
+};
+let bottomVar = {
+  hidden: {
+    y: 40,
+    opacity: 0,
+  },
+  visible: (num) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: num * 0.1,
+    },
+  }),
+};
+
+export default function PriceRoom({ width }) {
   const [message, setMessage] = useState({
     name: "",
     phone: "",
@@ -51,34 +94,6 @@ export default function PriceRoom() {
       });
     }
   };
-  let firstVar = {
-    hidden: {
-      x: -20,
-      opacity: 0,
-    },
-    visible: (num) => ({
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        delay: num * 0.1,
-      },
-    }),
-  };
-  let secondVar = {
-    hidden: {
-      x: 40,
-      opacity: 0,
-    },
-    visible: (num) => ({
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        delay: num * 0.1,
-      },
-    }),
-  };
   return (
     <div id="contacts" className={styles.background}>
       <header className={styles.container}>
@@ -117,7 +132,6 @@ export default function PriceRoom() {
               once: true,
               amount: 0.3,
             }}
-            variants={secondVar}
             custom={0}
           >
             Адрес
@@ -144,7 +158,7 @@ export default function PriceRoom() {
                   errorPhone ? styles.user__error : `${styles.user__name}`
                 }
                 type="text"
-                placeholder={errorName ? "Заполните поля" : "Ваше имя"}
+                placeholder={errorName ? "Заполните поля!" : "Ваше имя"}
                 name="name"
                 value={message.name}
                 initial="hidden"
@@ -153,7 +167,7 @@ export default function PriceRoom() {
                   once: true,
                   amount: 0.3,
                 }}
-                variants={secondVar}
+                variants={bottomVar}
                 custom={0}
               />
             </div>
@@ -170,7 +184,7 @@ export default function PriceRoom() {
                 once: true,
                 amount: 0.3,
               }}
-              variants={secondVar}
+              variants={bottomVar}
               custom={0}
             />
             <div className={styles.position}>
@@ -179,7 +193,7 @@ export default function PriceRoom() {
                 className={
                   errorPhone ? styles.user__error : `${styles.user__number}`
                 }
-                placeholder={errorName ? "Заполните поля" : "Ваш номер"}
+                placeholder={errorName ? "Заполните поля!" : "Ваш номер"}
                 type="text"
                 name="phone"
                 value={message.phone}
@@ -189,7 +203,7 @@ export default function PriceRoom() {
                   once: true,
                   amount: 0.3,
                 }}
-                variants={secondVar}
+                variants={bottomVar}
                 custom={0}
               />
             </div>
@@ -206,7 +220,7 @@ export default function PriceRoom() {
                 once: true,
                 amount: 0.3,
               }}
-              variants={secondVar}
+              variants={bottomVar}
               custom={0}
             />
             <motion.textarea
@@ -221,7 +235,7 @@ export default function PriceRoom() {
                 once: true,
                 amount: 0.3,
               }}
-              variants={secondVar}
+              variants={bottomVar}
               custom={0}
             />
             <motion.button className={styles.form__btn}>

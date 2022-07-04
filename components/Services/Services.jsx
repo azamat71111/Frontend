@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Services.module.sass";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 
-export default function Services() {
+export default function Services({ width }) {
   let firstVar = {
     hidden: {
       x: -20,
@@ -34,7 +34,7 @@ export default function Services() {
   return (
     <div className={styles.container}>
       <div className={`${styles.card} ${styles.card__1}`}>
-        <motion.div 
+        <motion.div
           className={`${styles.info__service} ${styles.info__service1}`}
           initial="hidden"
           whileInView="visible"
@@ -54,9 +54,9 @@ export default function Services() {
           </p>
         </motion.div>
         <motion.img
-          src="images/assessment.png" 
-          alt="" 
-          className={styles.img__service} 
+          src="images/assessment.png"
+          alt=""
+          className={styles.img__service}
           initial="hidden"
           whileInView="visible"
           viewport={{
