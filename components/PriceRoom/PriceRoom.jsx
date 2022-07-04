@@ -238,12 +238,6 @@ export default function PriceRoom({ width }) {
               Отправить
             </motion.button>
           </form>
-          {loading === "complete" ? (
-            <h3 className={styles.complete}>Успешно!</h3>
-          ) : null}
-          {loading === "error" ? (
-            <h3 className={styles.error}>Сообщения уже отправлено!</h3>
-          ) : null}
         </div>
       </header>
     </div>

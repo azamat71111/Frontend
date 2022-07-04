@@ -37,7 +37,6 @@ export default function Realters({ width }) {
     phone: "",
   });
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(null);
   const onChange = (e) => {
     setUser((value) => {
       return {
@@ -47,21 +46,18 @@ export default function Realters({ width }) {
     });
   };
   const submitHandler = async (e) => {
+    e.preventDefault();
     if (user.name === "" || user.phone === "") {
-      e.preventDefault();
       setError(true);
     } else {
-      e.preventDefault();
       try {
         const res = await axios.post(`realters`, { data: user });
         if (!res.data) {
           throw new Error();
         }
         setUser(res.data.data);
-        setLoading("complete");
       } catch (error) {
         setUser(false);
-        setLoading("error");
       }
       setUser({
         name: "",
@@ -83,7 +79,7 @@ export default function Realters({ width }) {
               amount: 0.3,
             }}
             variants={VarInput}
-            custom={1}
+            custom={0}
             onChange={onChange}
             value={user.name}
             name="name"
@@ -99,7 +95,7 @@ export default function Realters({ width }) {
               amount: 0.3,
             }}
             variants={VarInput}
-            custom={2}
+            custom={0}
             onChange={onChange}
             value={user.phone}
             name="phone"
@@ -115,7 +111,7 @@ export default function Realters({ width }) {
               amount: 0.3,
             }}
             variants={VarInput}
-            custom={3}
+            custom={0}
             className={styles.btn}
           >
             Отправить
@@ -133,7 +129,7 @@ export default function Realters({ width }) {
               amount: 0.3,
             }}
             variants={bottomVar}
-            custom={1}
+            custom={0}
             onChange={onChange}
             value={user.name}
             name="name"
@@ -149,7 +145,7 @@ export default function Realters({ width }) {
               amount: 0.3,
             }}
             variants={bottomVar}
-            custom={2}
+            custom={0}
             onChange={onChange}
             value={user.phone}
             name="phone"
@@ -165,7 +161,7 @@ export default function Realters({ width }) {
               amount: 0.3,
             }}
             variants={bottomVar}
-            custom={3}
+            custom={0}
             className={styles.btn}
           >
             Отправить
@@ -206,12 +202,6 @@ export default function Realters({ width }) {
         <form onSubmit={submitHandler} className={styles.input}>
           <MotionForm />
         </form>
-        {loading === "complete" ? (
-          <h3 className={styles.complete}>Успешно!</h3>
-        ) : null}
-        {loading === "error" ? (
-          <h3 className={styles.error}>Сообщения уже отправлено!</h3>
-        ) : null}
       </div>
     </>
   );
