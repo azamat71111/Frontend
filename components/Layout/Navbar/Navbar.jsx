@@ -67,7 +67,9 @@ function Navbar() {
     <header className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link href='/'><img src="/images/logo.png" alt="Евразия" /></Link>
+          <Link href="/">
+            <img src="/images/logo.png" alt="Евразия" />
+          </Link>
         </div>
         {screenWidth ? (
           <nav className={styles.nav}>
