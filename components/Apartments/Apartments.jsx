@@ -13,7 +13,7 @@ export default function Apartments() {
           />
           <h1 className={`${styles.title} ${styles.title__1}`}>Кок-Жар</h1>
           <p className={`${styles.price} ${styles.price__1}`}>
-            459$ за квадрат
+            550$ за квадрат
           </p>
         </div>
         <div className={`${styles.card} ${styles.card__2}`}>
@@ -24,7 +24,7 @@ export default function Apartments() {
           />
           <h1 className={`${styles.title} ${styles.title__2}`}>Асанбай</h1>
           <p className={`${styles.price} ${styles.price__2}`}>
-            359$ за квадрат
+            800$ за квадрат
           </p>
         </div>
         <div className={`${styles.card} ${styles.card__3}`}>
@@ -35,7 +35,7 @@ export default function Apartments() {
           />
           <h1 className={`${styles.title} ${styles.title__3}`}>Филармония</h1>
           <p className={`${styles.price} ${styles.price__3}`}>
-            259$ за квадрат
+            800$ за квадрат
           </p>
         </div>
         <div className={`${styles.card} ${styles.card__4}`}>
@@ -46,7 +46,7 @@ export default function Apartments() {
           />
           <h1 className={`${styles.title} ${styles.title__4}`}>Восток-5</h1>
           <p className={`${styles.price} ${styles.price__4}`}>
-            159$ за квадрат
+            550$ за квадрат
           </p>
         </div>
         <div className={`${styles.card} ${styles.card__5}`}>
@@ -57,7 +57,7 @@ export default function Apartments() {
           />
           <h1 className={`${styles.title} ${styles.title__5}`}>Джал</h1>
           <p className={`${styles.price} ${styles.price__5}`}>
-            659$ за квадрат
+            600$ за квадрат
           </p>
         </div>
         <div className={`${styles.card} ${styles.card__6}`}>
@@ -68,7 +68,7 @@ export default function Apartments() {
           />
           <h1 className={`${styles.title} ${styles.title__6}`}>Микрорайоны</h1>
           <p className={`${styles.price} ${styles.price__6}`}>
-            189$ за квадрат
+            700$ за квадрат
           </p>
         </div>
       </div>
