@@ -3,64 +3,35 @@ import React, { useEffect, useState } from "react";
 import styles from "./Realters.module.sass";
 import { motion } from "framer-motion";
 
-let firstVar = {
-  hidden: {
-    x: -20,
-    opacity: 0,
-  },
-  visible: (num) => ({
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      delay: num * 0.1,
-    },
-  }),
-};
-let secondVar = {
-  hidden: {
-    x: 40,
-    opacity: 0,
-  },
-  visible: (num) => ({
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      delay: num * 0.1,
-    },
-  }),
-};
 let bottomVar = {
   hidden: {
-    y: 40,
+    y: 10,
     opacity: 0,
   },
   visible: (num) => ({
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
-      delay: num * 0.1,
+      duration: 0.3,
+      delay: num * 0.3,
     },
   }),
 };
-let topVar = {
+let VarInput = {
   hidden: {
-    y: -40,
+    x: 10,
     opacity: 0,
   },
   visible: (num) => ({
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
-      delay: num * 0.1,
+      duration: 0.3,
+      delay: num * 0.3,
     },
   }),
 };
-
-export default function Realters() {
+export default function Realters({ width }) {
   const [user, setUser] = useState({
     name: "",
     phone: "",
@@ -99,36 +70,11 @@ export default function Realters() {
       setError(true);
     }
   };
-  return (
-    <>
-      <div className={styles.container}>
-        <motion.h4
-          initial="hidden"
-          whileInView="visible"
-          viewport={{
-            once: true,
-            amount: 0.3,
-          }}
-          variants={bottomVar}
-          custom={0}
-          className={styles.title}
-        >
-          НУЖНЫ РЕАЛТЕРЫ
-        </motion.h4>
-        <motion.h2
-          initial="hidden"
-          whileInView="visible"
-          viewport={{
-            once: true,
-            amount: 0.3,
-          }}
-          variants={topVar}
-          custom={0}
-          className={styles.title2}
-        >
-          Если вам нужно продать свою квартиру, заполните поле
-        </motion.h2>
-        <form onSubmit={submitHandler} className={styles.input}>
+
+  const MotionForm = () => {
+    if (width > 490) {
+      return (
+        <>
           <motion.input
             initial="hidden"
             whileInView="visible"
@@ -136,8 +82,8 @@ export default function Realters() {
               once: true,
               amount: 0.3,
             }}
-            variants={secondVar}
-            custom={0}
+            variants={VarInput}
+            custom={1}
             onChange={onChange}
             value={user.name}
             name="name"
@@ -152,8 +98,58 @@ export default function Realters() {
               once: true,
               amount: 0.3,
             }}
-            variants={firstVar}
-            custom={0}
+            variants={VarInput}
+            custom={2}
+            onChange={onChange}
+            value={user.phone}
+            name="phone"
+            type="text"
+            placeholder={error ? "Заполните поля!" : "Ваш номер"}
+            className={error ? styles.errorName : styles.input__email}
+          />
+          <motion.button
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
+            variants={VarInput}
+            custom={3}
+            className={styles.btn}
+          >
+            Отправить
+          </motion.button>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <motion.input
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
+            variants={bottomVar}
+            custom={1}
+            onChange={onChange}
+            value={user.name}
+            name="name"
+            type="text"
+            placeholder={error ? "Заполните поля!" : "Ваше имя"}
+            className={error ? styles.errorName : styles.input__name}
+          />
+          <motion.input
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
+            variants={bottomVar}
+            custom={2}
             onChange={onChange}
             value={user.phone}
             name="phone"
@@ -169,11 +165,46 @@ export default function Realters() {
               amount: 0.3,
             }}
             variants={bottomVar}
-            custom={0}
+            custom={3}
             className={styles.btn}
           >
             Отправить
           </motion.button>
+        </>
+      );
+    }
+  };
+  return (
+    <>
+      <div className={styles.container}>
+        <motion.h4
+          initial="hidden"
+          whileInView="visible"
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          variants={bottomVar}
+          custom={1}
+          className={styles.title}
+        >
+          НУЖНЫ РЕАЛТЕРЫ
+        </motion.h4>
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          variants={bottomVar}
+          custom={2}
+          className={styles.title2}
+        >
+          Если вам нужно продать свою квартиру, заполните поле
+        </motion.h2>
+        <form onSubmit={submitHandler} className={styles.input}>
+          <MotionForm />
         </form>
         {loading === "complete" ? (
           <h3 className={styles.complete}>Успешно!</h3>

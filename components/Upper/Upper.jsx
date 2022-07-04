@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Upper.module.sass";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 let leftVar = {
@@ -31,20 +30,6 @@ let rightVar = {
     },
   }),
 };
-let bottomVar = {
-  hidden: {
-    y: 40,
-    opacity: 0,
-  },
-  visible: (num) => ({
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      delay: num * 0.1,
-    },
-  }),
-};
 let topVar = {
   hidden: {
     y: -40,
@@ -59,12 +44,26 @@ let topVar = {
     },
   }),
 };
+let bottomVar = {
+  hidden: {
+    y: 40,
+    opacity: 0,
+  },
+  visible: (num) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: num * 0.1,
+    },
+  }),
+};
 
-function Upper() {
-  return (
-    <div className={styles.upper}>
-      <div className={styles.upper_container}>
-        <div className={styles.grid}>
+function Upper({ width }) {
+  const Motion = () => {
+    if (width > 800) {
+      return (
+        <>
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -109,6 +108,64 @@ function Upper() {
             <img src="/images/upper-3.svg" />
             <h2>Оценка</h2>
           </motion.div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
+            variants={bottomVar}
+            custom={0}
+            className={styles.grid_block}
+          >
+            <img src="/images/upper-1.svg" />
+            <h2>Продать</h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
+            variants={bottomVar}
+            custom={0}
+            className={styles.grid_block}
+          >
+            <img src="/images/upper-2.svg" />
+            <h2>Купить</h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
+            variants={bottomVar}
+            custom={0}
+            className={styles.grid_block}
+          >
+            <img src="/images/upper-3.svg" />
+            <h2>Оценка</h2>
+          </motion.div>
+        </>
+      );
+    }
+  };
+  return (
+    <div className={styles.upper}>
+      <div className={styles.upper_container}>
+        <div className={styles.grid}>
+          <Motion />
         </div>
       </div>
     </div>
