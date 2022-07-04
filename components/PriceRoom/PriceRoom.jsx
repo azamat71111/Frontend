@@ -47,54 +47,53 @@ let bottomVar = {
 };
 
 export default function PriceRoom({ width }) {
-  const [message, setMessage] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    addrress: "",
-    message: "",
-  });
   const [loading, setLoading] = useState(null);
-  const [errorName, setErrorName] = useState(false);
-  const [errorPhone, setErrorPhone] = useState(false);
-  const onChange = (e) => {
-    setMessage((value) => {
-      return {
-        ...value,
-        [e.target.name]: e.target.value,
-      };
-    });
-  };
-
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    if (message.phone === "" || message.name === "") {
-      setErrorName(true);
-      setErrorPhone(true);
-    } else {
-      try {
-        const res = await axios.post(`adrresses`, { data: message });
-        if (!res.data) {
-          throw new Error();
-        }
-        setMessage(res.data.data);
-        setLoading("complete");
-        setErrorName(false);
-        setErrorPhone(false);
-      } catch (error) {
-        setMessage(false);
-        setLoading("error");
-      }
-      setMessage({
-        name: "",
-        phone: "",
-        email: "",
-        addrress: "",
-        message: "",
-      });
-    }
-  };
   const Motion = () => {
+    const [message, setMessage] = useState({
+      name: "",
+      phone: "",
+      email: "",
+      addrress: "",
+      message: "",
+    });
+    const [errorName, setErrorName] = useState(false);
+    const [errorPhone, setErrorPhone] = useState(false);
+    const onChange = (e) => {
+      setMessage((value) => {
+        return {
+          ...value,
+          [e.target.name]: e.target.value,
+        };
+      });
+    };
+    const submitHandler = async (e) => {
+      e.preventDefault();
+      if (message.phone === "" || message.name === "") {
+        setErrorName(true);
+        setErrorPhone(true);
+      } else {
+        try {
+          const res = await axios.post(`adrresses`, { data: message });
+          if (!res.data) {
+            throw new Error();
+          }
+          setMessage(res.data.data);
+          setLoading("complete");
+          setErrorName(false);
+          setErrorPhone(false);
+        } catch (error) {
+          setMessage(false);
+          setLoading("error");
+        }
+        setMessage({
+          name: "",
+          phone: "",
+          email: "",
+          addrress: "",
+          message: "",
+        });
+      }
+    };
     if (width > 500) {
       return (
         <form onSubmit={submitHandler} className={styles.sidebar__form}>
