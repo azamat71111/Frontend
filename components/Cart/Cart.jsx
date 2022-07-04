@@ -29,7 +29,210 @@ const CartVariant = {
     amount: 0.8,
   },
 };
-export default function Cart() {
+const CartVarS = {
+  hidden: {
+    opacity: 0,
+    x: "100px",
+  },
+  animate: (num) => ({
+    opacity: 1,
+    x: "0",
+    transition: {
+      duration: 0.5,
+      delay: num * 0.1,
+    },
+  }),
+};
+const CartVarSForPhone = {
+  hidden: {
+    opacity: 0,
+    y: "50px",
+  },
+  animate: (num) => ({
+    opacity: 1,
+    y: "0",
+    transition: {
+      duration: 0.5,
+      delay: num * 0.1,
+    },
+  }),
+};
+export default function Cart({ width }) {
+  const Motion = () => {
+    if (width > 900) {
+      return (
+        <>
+          <motion.li
+            className={styles.cart__item}
+            initial="hidden"
+            whileInView="animate"
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            custom={1}
+            variants={CartVarS}
+          >
+            <div className={styles.cart__img}>
+              <img src="/images/cart__1.png" alt="eurasia cart" />
+            </div>
+            <AnimatePresence>
+              <motion.div
+                className={styles.cart__content}
+                initial="hidden"
+                whileInView="animate"
+                exit="end"
+                viewport="margin"
+                variants={CartVariant}
+              >
+                <h4 className={styles.cartContent__title}>О нас</h4>
+              </motion.div>
+            </AnimatePresence>
+          </motion.li>
+          <motion.li
+            className={styles.cart__item}
+            initial="hidden"
+            whileInView="animate"
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            custom={2}
+            variants={CartVarS}
+          >
+            <div className={styles.cart__img}>
+              <img src="/images/cart__1.png" alt="eurasia cart" />
+            </div>
+            <AnimatePresence>
+              <motion.div
+                className={styles.cart__content}
+                initial="hidden"
+                whileInView="animate"
+                exit="end"
+                viewport="margin"
+                variants={CartVariant}
+              >
+                <h4 className={styles.cartContent__title}>Наши объекты</h4>
+              </motion.div>
+            </AnimatePresence>
+          </motion.li>
+          <motion.li
+            className={styles.cart__item}
+            initial="hidden"
+            whileInView="animate"
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            custom={3}
+            variants={CartVarS}
+          >
+            <div className={styles.cart__img}>
+              <img src="/images/cart__1.png" alt="eurasia cart" />
+            </div>
+            <AnimatePresence>
+              <motion.div
+                className={styles.cart__content}
+                initial="hidden"
+                whileInView="animate"
+                exit="end"
+                viewport="margin"
+                variants={CartVariant}
+              >
+                <h4 className={styles.cartContent__title}>Наши контакты</h4>
+              </motion.div>
+            </AnimatePresence>
+          </motion.li>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <motion.li
+            className={styles.cart__item}
+            initial="hidden"
+            whileInView="animate"
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            custom={1}
+            variants={CartVarSForPhone}
+          >
+            <div className={styles.cart__img}>
+              <img src="/images/cart__1.png" alt="eurasia cart" />
+            </div>
+            <AnimatePresence>
+              <motion.div
+                className={styles.cart__content}
+                initial="hidden"
+                whileInView="animate"
+                exit="end"
+                viewport="margin"
+                variants={CartVariant}
+              >
+                <h4 className={styles.cartContent__title}>О нас</h4>
+              </motion.div>
+            </AnimatePresence>
+          </motion.li>
+          <motion.li
+            className={styles.cart__item}
+            initial="hidden"
+            whileInView="animate"
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            custom={2}
+            variants={CartVarSForPhone}
+          >
+            <div className={styles.cart__img}>
+              <img src="/images/cart__1.png" alt="eurasia cart" />
+            </div>
+            <AnimatePresence>
+              <motion.div
+                className={styles.cart__content}
+                initial="hidden"
+                whileInView="animate"
+                exit="end"
+                viewport="margin"
+                variants={CartVariant}
+              >
+                <h4 className={styles.cartContent__title}>Наши объекты</h4>
+              </motion.div>
+            </AnimatePresence>
+          </motion.li>
+          <motion.li
+            className={styles.cart__item}
+            initial="hidden"
+            whileInView="animate"
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            custom={3}
+            variants={CartVarSForPhone}
+          >
+            <div className={styles.cart__img}>
+              <img src="/images/cart__1.png" alt="eurasia cart" />
+            </div>
+            <AnimatePresence>
+              <motion.div
+                className={styles.cart__content}
+                initial="hidden"
+                whileInView="animate"
+                exit="end"
+                viewport="margin"
+                variants={CartVariant}
+              >
+                <h4 className={styles.cartContent__title}>Наши контакты</h4>
+              </motion.div>
+            </AnimatePresence>
+          </motion.li>
+        </>
+      );
+    }
+  };
   return (
     <div className={styles.container}>
       <div className={styles.title__list}>
@@ -43,66 +246,7 @@ export default function Cart() {
         <button className={styles.moreInfo}>Узнать больше</button>
       </div>
       <ul className={styles.cart__list}>
-        <li className={styles.cart__item}>
-          <div className={styles.cart__img}>
-            <img src="/images/cart__1.png" alt="eurasia cart" />
-          </div>
-          <AnimatePresence>
-            <motion.div
-              className={styles.cart__content}
-              initial="hidden"
-              whileInView="animate"
-              exit="end"
-              viewport="margin"
-              variants={CartVariant}
-            >
-              <h4 className={styles.cartContent__title}>О нас</h4>
-              {/* <Link href="/">
-                <a className={styles.cartContent__btn}>Узнать ещё</a>
-              </Link> */}
-            </motion.div>
-          </AnimatePresence>
-        </li>
-        <li className={styles.cart__item}>
-          <div className={styles.cart__img}>
-            <img src="/images/cart__1.png" alt="eurasia cart" />
-          </div>
-          <AnimatePresence>
-            <motion.div
-              className={styles.cart__content}
-              initial="hidden"
-              whileInView="animate"
-              exit="end"
-              viewport="margin"
-              variants={CartVariant}
-            >
-              <h4 className={styles.cartContent__title}>Наши объекты</h4>
-              {/* <Link href="/">
-                <a className={styles.cartContent__btn}>Узнать ещё</a>
-              </Link> */}
-            </motion.div>
-          </AnimatePresence>
-        </li>
-        <li className={styles.cart__item}>
-          <div className={styles.cart__img}>
-            <img src="/images/cart__1.png" alt="eurasia cart" />
-          </div>
-          <AnimatePresence>
-            <motion.div
-              className={styles.cart__content}
-              initial="hidden"
-              whileInView="animate"
-              exit="end"
-              viewport="margin"
-              variants={CartVariant}
-            >
-              <h4 className={styles.cartContent__title}>Наши контакты</h4>
-              {/* <Link href="/">
-                <a className={styles.cartContent__btn}>Узнать ещё</a>
-              </Link> */}
-            </motion.div>
-          </AnimatePresence>
-        </li>
+        <Motion />
       </ul>
     </div>
   );
