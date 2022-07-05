@@ -56,10 +56,9 @@ export default function Cart() {
               viewport="margin"
               variants={CartVariant}
             >
-              <h4 className={styles.cartContent__title}>О нас</h4>
-              {/* <Link href="/">
-                <a className={styles.cartContent__btn}>Узнать ещё</a>
-              </Link> */}
+              <Link href="/About">
+                <h4 className={styles.cartContent__title}>О нас</h4>
+              </Link> 
             </motion.div>
           </AnimatePresence>
         </li>
@@ -76,10 +75,9 @@ export default function Cart() {
               viewport="margin"
               variants={CartVariant}
             >
-              <h4 className={styles.cartContent__title}>Наши объекты</h4>
-              {/* <Link href="/">
-                <a className={styles.cartContent__btn}>Узнать ещё</a>
-              </Link> */}
+              <Link href="/#apartments">
+                  <h4 className={styles.cartContent__title}>Наши объекты</h4>
+              </Link> 
             </motion.div>
           </AnimatePresence>
         </li>
@@ -96,10 +94,9 @@ export default function Cart() {
               viewport="margin"
               variants={CartVariant}
             >
-              <h4 className={styles.cartContent__title}>Наши контакты</h4>
-              {/* <Link href="/">
-                <a className={styles.cartContent__btn}>Узнать ещё</a>
-              </Link> */}
+              <Link href="/#contacts">
+                <h4 className={styles.cartContent__title}>Наши контакты</h4>
+              </Link> 
             </motion.div>
           </AnimatePresence>
         </li>
