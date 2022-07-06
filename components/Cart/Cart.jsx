@@ -85,8 +85,9 @@ export default function Cart({ width }) {
                 viewport="margin"
                 variants={CartVariant}
               >
+              <Link href="/About">
                 <h4 className={styles.cartContent__title}>О нас</h4>
-              </motion.div>
+              </Link>               </motion.div>
             </AnimatePresence>
           </motion.li>
           <motion.li
@@ -112,8 +113,9 @@ export default function Cart({ width }) {
                 viewport="margin"
                 variants={CartVariant}
               >
-                <h4 className={styles.cartContent__title}>Наши объекты</h4>
-              </motion.div>
+                <Link href="/#apartments">
+                  <h4 className={styles.cartContent__title}>Наши объекты</h4>
+              </Link>               </motion.div>
             </AnimatePresence>
           </motion.li>
           <motion.li
@@ -139,8 +141,9 @@ export default function Cart({ width }) {
                 viewport="margin"
                 variants={CartVariant}
               >
+              <Link href="/#contacts">
                 <h4 className={styles.cartContent__title}>Наши контакты</h4>
-              </motion.div>
+              </Link>               </motion.div>
             </AnimatePresence>
           </motion.li>
         </>
@@ -171,7 +174,9 @@ export default function Cart({ width }) {
                 viewport="margin"
                 variants={CartVariant}
               >
+              <Link href="/About">
                 <h4 className={styles.cartContent__title}>О нас</h4>
+              </Link> 
               </motion.div>
             </AnimatePresence>
           </motion.li>
@@ -225,8 +230,9 @@ export default function Cart({ width }) {
                 viewport="margin"
                 variants={CartVariant}
               >
+            <Link href="/#contacts">
                 <h4 className={styles.cartContent__title}>Наши контакты</h4>
-              </motion.div>
+              </Link>               </motion.div>
             </AnimatePresence>
           </motion.li>
         </>
