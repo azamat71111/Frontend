@@ -184,7 +184,7 @@ export default function Realters({ width }) {
           custom={1}
           className={styles.title}
         >
-          НУЖНЫ РЕАЛТЕРЫ
+          НУЖНЫ РИЭЛТОРА?
         </motion.h4>
         <motion.h2
           initial="hidden"
