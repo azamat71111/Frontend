@@ -82,7 +82,7 @@ export default function Apartments({ width }) {
             />
             <h1 className={`${styles.title} ${styles.title__1}`}>Кок-Жар</h1>
             <p className={`${styles.price} ${styles.price__1}`}>
-              550$ за квадрат
+              650$ за квадрат
             </p>
           </motion.div>
           <motion.div
@@ -103,7 +103,7 @@ export default function Apartments({ width }) {
             />
             <h1 className={`${styles.title} ${styles.title__2}`}>Асанбай</h1>
             <p className={`${styles.price} ${styles.price__2}`}>
-              800$ за квадрат
+              850$ за квадрат
             </p>
           </motion.div>
           <motion.div
@@ -124,7 +124,7 @@ export default function Apartments({ width }) {
             />
             <h1 className={`${styles.title} ${styles.title__3}`}>Филармония</h1>
             <p className={`${styles.price} ${styles.price__3}`}>
-              800$ за квадрат
+              100$ за квадрат
             </p>
           </motion.div>
           <motion.div
@@ -145,7 +145,7 @@ export default function Apartments({ width }) {
             />
             <h1 className={`${styles.title} ${styles.title__4}`}>Восток-5</h1>
             <p className={`${styles.price} ${styles.price__4}`}>
-              550$ за квадрат
+              700$ за квадрат
             </p>
           </motion.div>
           <motion.div
@@ -160,13 +160,13 @@ export default function Apartments({ width }) {
             className={`${styles.card} ${styles.card__5}`}
           >
             <img
-              src="images/djal.png"
+              src="images/djal.jpg"
               alt="Джал"
               className={`${styles.img} ${styles.img__5}`}
             />
             <h1 className={`${styles.title} ${styles.title__5}`}>Джал</h1>
             <p className={`${styles.price} ${styles.price__5}`}>
-              600$ за квадрат
+              850$ за квадрат
             </p>
           </motion.div>
           <motion.div
@@ -189,7 +189,7 @@ export default function Apartments({ width }) {
               Микрорайоны
             </h1>
             <p className={`${styles.price} ${styles.price__6}`}>
-              700$ за квадрат
+              900$ за квадрат
             </p>
           </motion.div>
         </div>
@@ -215,7 +215,7 @@ export default function Apartments({ width }) {
             />
             <h1 className={`${styles.title} ${styles.title__1}`}>Кок-Жар</h1>
             <p className={`${styles.price} ${styles.price__1}`}>
-              550$ за квадрат
+              650$ за квадрат
             </p>
           </motion.div>
           <motion.div
@@ -236,7 +236,7 @@ export default function Apartments({ width }) {
             />
             <h1 className={`${styles.title} ${styles.title__2}`}>Асанбай</h1>
             <p className={`${styles.price} ${styles.price__2}`}>
-              800$ за квадрат
+              850$ за квадрат
             </p>
           </motion.div>
           <motion.div
@@ -257,7 +257,7 @@ export default function Apartments({ width }) {
             />
             <h1 className={`${styles.title} ${styles.title__3}`}>Филармония</h1>
             <p className={`${styles.price} ${styles.price__3}`}>
-              800$ за квадрат
+              1000$ за квадрат
             </p>
           </motion.div>
           <motion.div
@@ -278,7 +278,7 @@ export default function Apartments({ width }) {
             />
             <h1 className={`${styles.title} ${styles.title__4}`}>Восток-5</h1>
             <p className={`${styles.price} ${styles.price__4}`}>
-              550$ за квадрат
+              700$ за квадрат
             </p>
           </motion.div>
           <motion.div
@@ -293,13 +293,13 @@ export default function Apartments({ width }) {
             className={`${styles.card} ${styles.card__5}`}
           >
             <img
-              src="images/djal.png"
+              src="images/djal.jpg"
               alt="Джал"
               className={`${styles.img} ${styles.img__5}`}
             />
             <h1 className={`${styles.title} ${styles.title__5}`}>Джал</h1>
             <p className={`${styles.price} ${styles.price__5}`}>
-              600$ за квадрат
+              850$ за квадрат
             </p>
           </motion.div>
           <motion.div
@@ -322,7 +322,7 @@ export default function Apartments({ width }) {
               Микрорайоны
             </h1>
             <p className={`${styles.price} ${styles.price__6}`}>
-              700$ за квадрат
+              900$ за квадрат
             </p>
           </motion.div>
         </div>
